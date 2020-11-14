@@ -35,14 +35,14 @@ var bodyHeight = upperHeight + lowerHeight;
 var Container = CAG.circle({center: [0,0], radius: bodyRadius, resolution: edgeNumber}).extrude({offset: [0,0,bodyHeight]}).intersect(CSG.cylinder({ 
   start: [0, 0, 0],
   end: [0, 0, bodyHeight],
-  radius: bodyRadius * 0.98,                        // true cylinder
+  radius: bodyRadius * 0.98,                        
   resolution: 128
 }));
 
 var cutter = CAG.circle({center: [0,0], radius: bodyRadius-2, resolution: edgeNumber}).extrude({offset: [0,0,bodyHeight]}).intersect(CSG.cylinder({ 
   start: [0, 0, 0],
   end: [0, 0, bodyHeight],
-  radius: bodyRadius * 0.98,                        // true cylinder
+  radius: bodyRadius * 0.98,                       
   resolution: 128
 }));
 
@@ -64,10 +64,16 @@ var opening = CSG.cylinder({
   resolution: 32
 }).subtract(cylinderBase).cutByPlane(plane1);
 
+var grooveCutter = CSG.cylinder({                      
+  start: [0, 0, 0],
+  end: [bodyRadius*1.2, 0, 0],
+  radius:1,
+  resolution: 32
+}).translate([0,0,3]).rotateY(2).rotateZ(-180/edgeNumber);
 
 var stopperCylinder = CAG.fromPoints([ [0,0],[4,0],[0,4]]).extrude({offset: [0,0,5]}).rotateX(-90).translate([-bodyRadius*(Math.cos(Math.PI/edgeNumber))+1,0,lowerHeight]).rotateZ(180/edgeNumber);
 
 var stopperSet = makeStopperSet(edgeNumber, stopperCylinder);
 
-return Container.subtract(cutter.translate([0,0,2])).union(opening.translate([bodyRadius*(Math.cos(Math.PI/edgeNumber))+2,0,6]).rotateZ(-180/edgeNumber).subtract(cutter.translate([0,0,2]))).subtract(cylinderBase.translate([bodyRadius*(Math.cos(Math.PI/edgeNumber))+2,0,6]).rotateZ(-180/edgeNumber)).union(stopperSet)
+return Container.subtract(cutter.translate([0,0,2])).union(opening.translate([bodyRadius*(Math.cos(Math.PI/edgeNumber))+2,0,6]).rotateZ(-180/edgeNumber).subtract(cutter.translate([0,0,2]))).subtract(cylinderBase.translate([bodyRadius*(Math.cos(Math.PI/edgeNumber))+2,0,6]).rotateZ(-180/edgeNumber)).union(stopperSet).subtract(grooveCutter)
 }
