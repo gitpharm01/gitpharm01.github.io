@@ -46,9 +46,16 @@ var opening = CSG.cylinder({
   resolution: 32
 }).subtract(cylinderBase).cutByPlane(plane1);
 
+var grooveCutter = CSG.cylinder({                      
+  start: [0, 0, 0],
+  end: [xLength*2, 0, 0],
+  radius:1,
+  resolution: 32
+}).translate([0,0,1]).rotateY(2);
+
 var stopperCylinder = CAG.fromPoints([ [0,0],[4,0],[0,4]]).extrude({offset: [0,0,5]}).rotateX(-90);
 var stopperSet = stopperCylinder.translate([-xLength,0,-upperHeight]).union(stopperCylinder.rotateZ(180).translate([xLength,0,-upperHeight])).union(stopperCylinder.rotateZ(-90).translate([0,yLength,-upperHeight])).union(stopperCylinder.rotateZ(90).translate([0,-yLength,-upperHeight]));
 
-  return Rcube2.subtract(Rcube).cutByPlane(plane1).subtract(cylinderBase.translate([xLength,0,-bodyHeight+4.4])).union(opening.translate([xLength,0,-bodyHeight+4.4]).subtract(Rcube)).union(stopperSet).translate([0,0,bodyHeight]);
+  return Rcube2.subtract(Rcube).cutByPlane(plane1).subtract(cylinderBase.translate([xLength,0,-bodyHeight+4.4])).union(opening.translate([xLength,0,-bodyHeight+4.4]).subtract(Rcube)).union(stopperSet).translate([0,0,bodyHeight]).subtract(grooveCutter);
 }
 
