@@ -10,13 +10,21 @@ Powered by OpenJSCAD(abbreviated as jscad), this website can generate customizab
 ## Usage
 01- Go to the index page at  https://gitpharm01.github.io/
 
+![image](https://github.com/gitpharm01/gitpharm01.github.io/blob/main/imgs/index.png)
+
 02- Pick a design you like and click on it
 
 03- Start making the model. Change the settings in the parameters box and press "Update" to see the result.
 
+![image](https://github.com/gitpharm01/gitpharm01.github.io/blob/main/imgs/part1.png)
+
 04- Download the model by pressing the "Generate STL" button.(Multiple printable file formats available!) and click on the "Download link".
 
+![image](https://github.com/gitpharm01/gitpharm01.github.io/blob/main/imgs/download.png)
+
 05- Go to the next part
+
+![image](https://github.com/gitpharm01/gitpharm01.github.io/blob/main/imgs/secondPart.png)
 
 06- Check the files and slice them
 
