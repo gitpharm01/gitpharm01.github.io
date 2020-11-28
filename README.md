@@ -14,7 +14,7 @@ Powered by OpenJSCAD(abbreviated as jscad), this website can generate customizab
 
 03- Start making the model. Change the settings in the parameters box and press "Update" to see the result.
 
-04- Download the model by pressing the download button.(Multiple printable file formats available!)
+04- Download the model by pressing the "Generate STL" button.(Multiple printable file formats available!) and click on the "Download link".
 
 05- Go to the next part
 
