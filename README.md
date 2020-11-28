@@ -32,6 +32,9 @@ Powered by OpenJSCAD(abbreviated as jscad), this website can generate customizab
 
 
 ## RoadMap
+2020.11.28
+Improved readme with pictures
+
 2020.11.22 
 Added new model: Bag clip with a cap 
 
