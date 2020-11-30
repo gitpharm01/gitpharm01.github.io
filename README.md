@@ -32,6 +32,9 @@ Powered by OpenJSCAD(abbreviated as jscad), this website can generate customizab
 
 
 ## RoadMap
+2020.11.30
+Added new model: Customizable spoon
+
 2020.11.28
 Improved readme with pictures
 
