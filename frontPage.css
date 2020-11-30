@@ -1,5 +1,7 @@
 .designDiv{
 	background-color : "FloralWhite";
+	border-style:outset;
+	border-color: gray
 }
 
 .modelDescription{
