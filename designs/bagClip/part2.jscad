@@ -1,3 +1,4 @@
+//Copyright (c) 2020 [gitpharm01] gitpharm01@gmail.com
 function getParameterDefinitions() {
     return [
         {
