@@ -30,8 +30,14 @@ Powered by OpenJSCAD(abbreviated as jscad), this website can generate customizab
 
 07- Print them out!
 
+## Contacts
+You can send bug reports and suggestions to my mail:
+gitpharm01@gmail.com
 
 ## RoadMap
+2020.12.03 
+Updated designs: spoon and bagclip
+
 2020.11.30
 Added new model: Customizable spoon
 
