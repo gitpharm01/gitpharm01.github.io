@@ -35,6 +35,9 @@ You can send bug reports and suggestions to my mail:
 gitpharm01@gmail.com
 
 ## RoadMap
+2020.12.09
+Added new Models: Dual Text, simple bagclip
+
 2020.12.03 
 Updated designs: spoon and bagclip
 
