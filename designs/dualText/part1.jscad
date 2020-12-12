@@ -64,7 +64,7 @@ function main(params) {
     function makeCharGeometry(character){
         //Detect "blank" and add a cube of the full character size
         if(character == " "){
-            return cube({size:[textSize*1.6,textSize*1.6,textSize*1.6]})
+            return cube({size:[textSize*1.6,textSize*2,textSize*2]})
         }else{
             return csgFromChar(vectorChar({height : textSize, width :textSize},character))
         }
@@ -91,8 +91,8 @@ function main(params) {
         
         
     }
-    var circleBase = circle({r: textSize*0.8, fn:64});
-    var hull =chain_hull( circleBase.translate([-textSize,-textSize,0]), circleBase.translate([(text1.length -1)* textSize *1.6,(text1.length-1) * textSize*1.6,0]));
+    var circleBase = circle({r: textSize, fn:64});
+    var hull =chain_hull( circleBase.translate([-textSize,-textSize,0]), circleBase.translate([(text1.length -1.5)* textSize *1.6,(text1.length-1.5) * textSize*1.6,0]));
     
     var basePlate = linear_extrude({ height: params.basePlateHeight },hull).rotateX(-90);
     var finalOutPut = [];
