@@ -91,6 +91,9 @@ function main(params) {
             );
         }
     }).translate([0, 0, 8.8])).subtract(capEdgeCutter.rotateX(180).translate([0, 0, 24]));
-    return [insertRingComplete.translate([0, 0, 14]), ringCap.rotateX(180).translate(radius * 2, 0, 0)]
+    //var insertZDelta =-(insertRingComplete.getBounds()[0].z + insertRingComplete.getBounds()[1].z )/ 2
+    var ringCapDelta = -ringCap.getBounds()[1].z 
+    var insertZDelta =- insertRingComplete.getBounds()[1].z  + ((insertRingComplete.getBounds()[1].z - insertRingComplete.getBounds()[0].z ))
+        return [insertRingComplete.translate([0, 0, insertZDelta]), ringCap.translate( [radius * 3, 0, ringCapDelta] ).rotateX(180) ]
 }
 
