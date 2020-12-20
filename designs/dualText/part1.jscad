@@ -47,15 +47,15 @@ function main(params) {
         return g.translate([deltax, deltay, deltaz])
     }
     //Function to turn a char into
-    function csgFromChar(charVector) {
-		console.log("character:");
-		console.log( charVector)
+    function csgFromChar(charVector , height) {
+		//console.log("character:");
+		//console.log( charVector)
         var segments = charVector.segments;
         let output = [];
         segments.forEach(segment => output.push(
             rectangular_extrude(segment, {
                 w: params.strokeThickness,
-                h: charVector.width *2
+                h: textSize *2
             })
         ));
         return union(output);
@@ -66,7 +66,7 @@ function main(params) {
         if(character == " "){
             return cube({size:[textSize*1.6,textSize*2,textSize*2]})
         }else{
-            return csgFromChar(vectorChar({height : textSize, width :textSize},character))
+            return csgFromChar(vectorChar({height : textSize, width :textSize},character) , textSize)
         }
     }
     
@@ -85,8 +85,9 @@ function main(params) {
     var o = [];
     for (var i = 0; i < text1.length; i++) {
         var shape1 = makeCharGeometry( text1.charAt(i));
-		//console.log(shape1.getBounds()[0].x - shape1.getBounds()[1].x)
+        //console.log(shape1.getBounds()[0].x - shape1.getBounds()[1].x)
         var shape2 = makeCharGeometry( text2.charAt(i));
+        //o.push(geoCenter(shape1));
         o.push(intersection(geoCenter(shape1), geoCenter(shape2.rotateY(90))).translate([textSize *1.6 * i, 0, -(textSize*1.6 * i)]));
         
         
