@@ -1,7 +1,8 @@
 .designDiv{
 	background-color : "FloralWhite";
 	border-style:outset;
-	border-color: gray
+	border-color: gray;
+	height: 300px
 }
 
 .modelDescription{
@@ -12,3 +13,5 @@
 .thumbnails{
 	height = 100
 }
+
+

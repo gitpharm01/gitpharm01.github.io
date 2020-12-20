@@ -6,10 +6,22 @@
 	<meta charset="UTF-8" >
 	<link rel="stylesheet" href="frontPage.css" type="text/css">
     <title>About me</title>
+    <style>
+       #slider {
+        opacity:1;
+        transition: opacity 1s; 
+       }
+
+       #slider.fadeOut {
+        opacity:0;
+        }
+
+    </style>
  </head>
 
 
   <body style="background-color : BurlyWood">
+    
 	<div style="text-align: center; font-size: 25px"> <a href =index.html >Back to index page</a> </div>
     <h1 style =" font-family: Times New Roman">About this site:</h1>
 	<h3>I started my journey on 3D printing at early 2019 with a cheap delta printer. <br>
@@ -35,8 +47,32 @@ I wish to show its severly undervalued power to the 3D printing communities and 
 </select> </td></tr>
 </table>
 <input type="hidden" name="currency_code" value="USD">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG_wCUP.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<input type="image" src="./imgs/support.png" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
+<hr>
+<img id= 'slider' ></img>
+
+<script>
+        var imgArray = [
+    './imgs/thumbnails/rectBox1.png',
+    './imgs/thumbnails/spoon01.png',
+    './imgs/thumbnails/bagClip01.png'],
+    curIndex = 0;
+    imgDuration = 2500;
+
+function slideShow() {
+    document.getElementById('slider').className += "fadeOut";
+    setTimeout(function() {
+        document.getElementById('slider').src = imgArray[curIndex];
+        document.getElementById('slider').className = "";
+    },1000);
+    curIndex++;
+    if (curIndex == imgArray.length) { curIndex = 0; }
+    setTimeout(slideShow, imgDuration);
+}
+slideShow();
+    </script>
+
 </form>
 
   </body>
