@@ -30,6 +30,8 @@ Powered by OpenJSCAD(abbreviated as jscad), this website can generate customizab
 
 07- Print them out!
 
+There are a video tutorial availabe at: https://youtu.be/EEfozuNCTYc 
+
 ## Contacts
 You can send bug reports and suggestions to my mail:
 gitpharm01@gmail.com
