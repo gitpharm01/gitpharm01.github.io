@@ -37,6 +37,9 @@ You can send bug reports and suggestions to my mail:
 gitpharm01@gmail.com
 
 ## RoadMap
+2020.12.26
+Updated about page
+
 2020.12.18
 Added improved tutorial page and project info.
 
