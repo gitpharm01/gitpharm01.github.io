@@ -37,6 +37,9 @@ You can send bug reports and suggestions to my mail:
 gitpharm01@gmail.com
 
 ## RoadMap
+2021.01.09
+Added new model: foldable basket
+
 2020.12.26
 Updated about page
 
