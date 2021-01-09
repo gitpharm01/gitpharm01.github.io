@@ -3435,11 +3435,9 @@ function rotate_extrude (params, baseShape) {
   const totalAngle = flipped ? clamp((startAngle + angle), 0, 360) : clamp((startAngle + angle), -360, 0)
   // adapt to the totalAngle : 1 extra segment per 45 degs if not 360 deg extrusion
   // needs to be at least one and higher then the input resolution
-  const segments = Math.max(
-    Math.floor(Math.abs(totalAngle) / 45),
-    1,
-    fn
-  )
+  // Modified at 2021.1.1 by, to fix the 8 segments bug!!!!!!!!!!!!!!!!!!!!!!!
+  // Original : const segments = Math.max(  Math.floor(Math.abs(totalAngle) / 45),  1,  fn  )
+  const segments = fn;
   // maximum distance per axis between two points before considering them to be the same
   const overlapTolerance = 0.00001
   // convert baseshape to just an array of points, easier to deal with
