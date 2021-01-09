@@ -39,6 +39,7 @@ gitpharm01@gmail.com
 ## RoadMap
 2021.01.09
 Added new model: foldable basket
+!!Modified min.js to fix the rotate extrude bug(edge number was limited to 8 and higher)
 
 2020.12.26
 Updated about page
