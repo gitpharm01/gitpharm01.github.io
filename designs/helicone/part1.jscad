@@ -183,10 +183,10 @@ function main(params) {
                 }
             }else{
                 if(i % 2 ===0){
-                layerUnit = centralBodyBase.union(armBase).union(endL.translate([-layerWidth/2 + 6,0,0])).union(endR.mirroredX().mirroredY().translate([layerWidth/2 -6,0,0])).subtract(charSign.translate([layerWidth/2 -7,0,0]));
+                layerUnit = centralBodyBase.union(armBase).union(endL.translate([-layerWidth/2 + 6,0,0])).union(endR.mirroredX().mirroredY().translate([layerWidth/2 -6,0,0]));
                 layerList.push(layerUnit.translate([0,(i *25)+1,0]));
                 }else{
-                layerUnit = centralBodyBase.union(armBase).union(endR.translate([-layerWidth/2 + 6,0,0])).union(endL.mirroredX().mirroredY().translate([layerWidth/2 -6,0,0])).subtract(charSign.translate([layerWidth/2 -7,0,0]));
+                layerUnit = centralBodyBase.union(armBase).union(endR.translate([-layerWidth/2 + 6,0,0])).union(endL.mirroredX().mirroredY().translate([layerWidth/2 -6,0,0]));
                 layerList.push(layerUnit.translate([0,(i *25)+1,0]));
                 }
             }
