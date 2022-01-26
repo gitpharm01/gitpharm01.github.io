@@ -97,10 +97,12 @@ function main(params) {
 		
 		let cylinderBase = cylinder({start: [0,Distance,0], end: [0,Distance,10], r:7, fn: 64});
 		
-		let hoeCutter = cylinder({start: [0,Distance,0], end: [0,Distance,10], r:4.1, fn: 64});
+		let holeCutter = cylinder({start: [0,Distance,0], end: [0,Distance,10], r:4.2, fn: 64});
 		
 		
-	    let cageBase = cageArm.union(cylinder({start: [0,0,0], end: [0,0,8], r:7, fn: 64})).subtract( cylinder({start: [0,0,0], end: [0,0,5.8], r1:3, r2:0, fn: 64}) ).union(cylinder({start: [0,0,8], end: [0,0,18], r:3.9, fn: 64})).union(cylinderBase).union(cylinderBase.rotateZ(120)).union(cylinderBase.rotateZ(240)).subtract(hoeCutter).subtract(hoeCutter.rotateZ(120)).subtract(hoeCutter.rotateZ(240)) ;
+	    let cageBase = cageArm.union(cylinder({start: [0,0,0], end: [0,0,8], r:7, fn: 64})).union(cylinder({start: [0,0,8], end: [0,0,18], r:3.9, fn: 64})).union(cylinderBase).subtract(holeCutter).subtract( cylinder({start: [0,0,0], end: [0,0,5.8], r1:3, r2:0, fn: 64}) ) ;
+	    //deleted pair gear due to large friction
+	    //.union(cylinderBase.rotateZ(180)).union(CSG.cube({center: [0, -Distance/2, 2], radius: [2.5, Distance/2, 2]})).subtract(holeCutter.rotateZ(180))
 	    return cageBase
 
 		

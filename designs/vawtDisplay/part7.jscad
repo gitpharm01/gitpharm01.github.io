@@ -53,8 +53,13 @@ function main(params) {
         gear1,
         gear2,
         params.showOption);
-
-    var shape = gearSet.createShape();
+        
+    let platformDiameter
+    if(params.platformDiameter < params.gearRingDiameter){
+        platformDiameter = params.gearRingDiameter
+    }else{  platformDiameter = params.platformDiameter }
+    
+    var shape = gearSet.createShape(platformDiameter);
     OpenJsCad.log('returning gear set shape');
     return shape;
 }
@@ -62,43 +67,48 @@ function main(params) {
 function getParameterDefinitions() {
     return [
         {
-            //name: 'centerDistance',
+            name: 'platformDiameter',
+            caption: 'A.platform Diameter:',
+            type: 'float',
+            initial: 130
+        },
+        {
             name: 'gearRingDiameter',
-            caption: 'A.Outer diameter of gear ring:',
+            caption: 'B.Outer diameter of gear ring:',
             type: 'float',
             initial: 100
         },
         {
             name: 'pressureAngle',
-            caption: 'B. Pressure Angle :',
+            caption: 'C. Pressure Angle :',
             //(common values are 14.5, 20 and 25 degrees)
             type: 'float',
             initial: 20
         },
         {
             name: 'clearance',
-            caption: 'C. Clearance :',
+            caption: 'D. Clearance :',
             //(minimal distance between the apex of a tooth and the trough of the other gear; in length units)
             type: 'float',
             initial: 0.1
         },
         {
             name: 'backlash',
-            caption: 'D. Backlash :',
+            caption: 'E. Backlash :',
             //(minimal distance between meshing gears; in length units)
             type: 'float',
             initial: 0.3
         },
         {
             name: 'profileShift',
-            caption: 'E. Profile Shift :',
+            caption: 'F. Profile Shift :',
             //(indicates what portion of gear one\'s addendum height should be shifted to gear two. E.g., a value of 0.1 means the adddendum of gear two is increased by a factor of 1.1 while the height of the addendum of gear one is reduced to 0.9 of its normal height.)
             type: 'float',
             initial: 0.0
         },
         {
             name: 'wheel1ToothCount',
-            caption: 'F. Wheel 1 Tooth Count :',
+            caption: 'G. Wheel 1 Tooth Count :',
             //Fixed to internal gears
             //original : n1 > 0: external gear; n1 = 0: rack; n1 < 0: internal gear
             type: 'int',
@@ -125,7 +135,7 @@ function getParameterDefinitions() {
         },*/
         {
             name: 'showOption',
-            caption: 'J. Diplay mode:',
+            caption: 'I. Diplay mode:',
             type: 'choice',
             values: [3, 1, 2],
             initial: 1,
@@ -133,14 +143,14 @@ function getParameterDefinitions() {
         },
         {
             name: 'stepsPerToothAngle',
-            caption: 'K. Tooth resolution ',
+            caption: 'J. Tooth resolution ',
             //Rotation steps per tooth angle when assembling the tooth profile (3 = draft, 10 = good quality). Increasing the value will result in smoother profiles at the cost of significantly higher calcucation time. Incease in small increments and check the result by zooming in.
             type: 'int',
             initial: 3
         },
         {
             name: 'resolution',
-            caption: 'L. Number of segments per 360 degree of rotation:',
+            caption: 'K. Number of segments per 360 degree of rotation:',
             // (only used for circles and arcs); 90 is plenty
             type: 'int',
             initial: 30
@@ -691,7 +701,7 @@ var GearSet = (function () {
 
         this.showOption = showOption;
     }
-    GearSet.prototype.createShape = function () {
+    GearSet.prototype.createShape = function ( platformDiameter ) {
         var shape = new CAG();
         if ((this.showOption & 1) > 0) {
             // show gear 1
@@ -739,7 +749,7 @@ var GearSet = (function () {
             gear2CSG = gear2CSG.rotateZ(angle).translate([this.gearsDistance, 0]);  
         }
         
-         let platform =translate([0,0,-0.8] ,  cylinder({r: this.gear1.pitchRadius+10 , h: 0.8, fn:64}) )
+         let platform =cylinder({r: platformDiameter/2 , h: 0.8, fn:64}).translate([0,0,-0.8]);
          
          
          if (this.showOption ==1){
