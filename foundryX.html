@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2022 [gitpharm01] gitpharm01@gmail.com -->
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="frontPage.css" type="text/css">
+    <title>The Foundry X project</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: azure;
+        }
+
+        .topnav a {
+            float: left;
+            color: dimgray;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AAff;
+            color: white;
+        }
+
+        #goTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #goTopBtn:hover {
+            background-color: #990;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: chartreuse;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+
+<body style="background-color : BurlyWood">
+
+    <button onclick="goTop()" id="goTopBtn" title="Go to top">Go to top</button>
+
+
+    <h1 href="#news" style=" font-family: Times New Roman">Foundry X project</h1>
+    <h3 id="EngToCht">English &#8594; 繁體中文</h3>
+    <h3 id="ChtToEng" style="display: none">English &#8592; 繁體中文</h3>
+    <label   class="switch">
+        <input id="lanSwitch" onclick="langSwitch()" type="checkbox" checked>
+        <span class="slider"></span>
+    </label><br>
+
+    <div class="topnav" id="navEng" >
+        <a class="active" href="index.html" style=" font-family: Times New Roman">Back to index page</a>
+
+        <a href="#Whatisit" style=" font-family: Times New Roman">What is it?</a>
+        <a href="#Why" style=" font-family: Times New Roman">Why you should subscribe foundry X?</a>
+        <a href="#How" style=" font-family: Times New Roman">How does it work?</a>
+        <a href="#map" style=" font-family: Times New Roman">Site map</a>
+    </div>
+    
+    <div class="topnav" id="navCHT" style="display: none">
+        <a class="active" href="index.html" style=" font-family: Times New Roman">回首頁</a>
+
+        <a href="#WhatisitCHT" style=" font-family: Times New Roman">它是什麼?</a>
+        <a href="#WhyCHT" style=" font-family: Times New Roman">為什麼要訂閱這個服務?</a>
+        <a href="#HowCHT" style=" font-family: Times New Roman">它是怎麼運作的?</a>
+        <a href="#mapCHT" style=" font-family: Times New Roman">網站地圖</a>
+    </div>
+
+    <img src="imgs/foundryX/scriptBased.png" alt="script-based modeling" width="400" height="300">
+    <img src="imgs/foundryX/crowdfundedFull.png" alt="crowd-funded development" width="360" height="300"><br>
+
+    <div id="EngDiv">
+        <h1 id="Whatisit" style="font-family: Times New Roman">What is it?</h1>
+        <h3>Foundry X is a web-based service.</h3>
+        <h3>
+            It provides the best printable files.<br>
+            It's also a platform for the funding and development of new 3DP projects.<br>
+            <br>
+            <br>
+            <br>
+            <img src="imgs/foundryX/logo.png" alt="JSCAD logo" width="250" height="250"><br>
+            Its models are generated by OpenJSCAD, a scipt-based 3D modeling platform.<br>
+            Unlike ordinary model sharing sites, you don't have to download from a FTP server,<br> which might give you a 404 error from time to time.<br>
+            <br>
+            The foundry X has a unique mechanism of developing new models.<br>
+            It allows the user community to decide what to develop.<br>
+            Foundry X forges the tools that aid your business in 3D printing industry.
+        </h3>
+
+        <h1 id="Why" style=" font-family: Times New Roman">Why you should subscribe to this service?</h1>
+        <h3>
+            1.Imagine that you are following a cool 3DP project, like modular drones, and you sponsor the author regularly,<br> but suddenly he gets busy and has to stop the project....
+        </h3>
+
+        <h3>On Foundry X, the project you subscribed will be activly updated.<br>
+            Foundry X hires a team of developers who are paid on regular bases to maintain and improve its projects.<br>
+            Even if the original developer leaves the team, the project still keeps going as long as it is subscribed<br><br>
+        </h3>
+
+        <h3>
+            2.Your subscription will bring you unlimited combination of models, instead of one.
+        </h3>
+
+        <h3>Powered by script-based modeling, the Foundry X offers you a powerful system which generates customizable model.<br>
+            By changing the parameters(length, height, et cetera) of a model, you are able to create different versions of the same product.<br>
+            In Foundry X, you don't have to pay for a "version 2".<br><br></h3>
+
+        <h3>3.You want to increase your revenue, but find it difficult to get new cases...</h3>
+
+        <h3>
+            Instead of passively waiting for customers to drop an order to print their models, you will have your own unique goods.<br>
+            Take 3D printed music box, for example.<br>
+            By subscribing this project, you are able to create music boxes with customizable song and shape.<br>
+            Now you can advertise your business with this specific type of product instead of abstractly saying: I'll print out what you have.<br><br>
+        </h3>
+
+        <h3>4.Diverge the cost of Developing new projects.</h3>
+
+        <h3>It's quite difficult for small business owners to make their own projet.<br>
+            This costs a lot of time and money to make a new 3DP project. <br>And such cost will not guarantee this product to succeed in the market.<br>
+            However, in the user forum of Foundry X you are allowed to launch a new project without the need to pay all the costs by yourself.<br>
+            The unique process of crowd-funded development will converge resources from all users who approves your vision.<br>
+            This mechanism also detects bugs and flaws in the prject in early stage.<br><br></h3>
+
+        <h1 id="How" style=" font-family: Times New Roman">How does it work?</h1>
+        <h2>1.Script-based modeling: One script, infinite possibility！<br></h2>
+        <h3>
+
+            <img src="imgs/foundryX/scriptBased.png" alt="script-based modeling" width="400" height="200"><br>
+            The 3D modeling engine of Foundry X is OpenJSCAD.<br>
+            Unlike traditional CAD softwares, it is operated in a browser.<br>
+            It can generate different printable files of the same kind by adjusting parameters. You can find many examples in my gallery<br>
+            <a href="index.html" style=" font-family: Times New Roman">go to gallery</a>
+
+            <br>
+            And Jscad has more advantages include:<br>
+            A.It's very to learn and use. <br>
+            You can make the model you want without memorizing complicated commands. Just point and click and it's all done!<br>
+            <img src="imgs/foundryX/simple.png" alt="simple" width="500" height="200"><br>
+            B.As long as there's a supported browser, you can run it on any device and no instilation is required.<br>
+            <img src="imgs/foundryX/crossPlatform.png" alt="cross platform" width="500" height="200"><br>
+            C.The number of devices to access this service is unlimited. You only have to log in to your account.<br>
+            <img src="imgs/foundryX/cloud.png" alt="cloud" width="200" height="200"><br>
+            D.Foundry X is not traditional file-sharing site with FTP servers. It will not give you 404 error from time to time.<br>
+            The models are generated in your device.<br>
+
+            <img src="imgs/foundryX/clientSide.png" alt="client side" width="500" height="200"><br><br>
+        </h3>
+
+        <h2>2.Crowd-funded development： The service of Foundry X evolves through the power of its users<br></h2>
+        <h3>
+
+            <img src="imgs/foundryX/crowdfundedFull.png" alt="crowd-funded development" width="380" height="300"><br>
+            A. You think the script/service you subscribe can be better?<br>
+            You can launch a pull request in the user forum by describing why and how to achive this.<br>
+            <img src="imgs/foundryX/pullReqest.png" alt="pull request" width="200" height="200"><br>
+
+            B. What if you got a cool idea that will definitely make profit, but your modeling technique is not good enough?<br>
+            Just launch a project proposal in the user forum and introduce your idea/design in detail.<br>
+            <img src="imgs/foundryX/proposal.png" alt="new project proposal" width="200" height="200"><br>
+
+            C. Those requests and proposals will be voted by other users in the forum.<br>
+            And the develop team will accept those with highest votes monthly and start working on these requests/proposals.<br>
+            <img src="imgs/foundryX/select.png" alt="proposal selected" width="200" height="200"><br>
+
+            D. Every subscribers of Foundry X will get X points which is corresponded to the money they've paid.<br>
+            It can be used in user forum. When you find any request/proposal you like, you can spend it to increase their vote couts.<br>
+            <img src="imgs/foundryX/xpoint.png" alt="x points" width="200" height="200"><br>
+
+            E. A good idea or prject will not always win approval from everyone.
+            Its content might also be incomplete.<br>
+            Through discussion with other users, the proposer can make his project more practical and feasible.<br>
+            <img src="imgs/foundryX/discussNUpgrade.png" alt="discuss and upgrade" width="500" height="200"><br>
+
+            F. Wha to do if you find a request/proposal of your liking but you've spent all your X points?<br>
+            Just buy more points!<br>
+            <img src="imgs/foundryX/xpoint.png" alt="x points" width="200" height="200"><br>
+
+            G. The purpose of Foundry X is to forge money-making tools for our clients.<br>
+            It requires funding to maintain its services and develop new projects.<br>
+            To those who are willing to pay extra moeny to support us, we are glad to give more power to them.<br>
+            Every point spent on voting represents users' investment in Foundry X and their expectation to its future<br><br>
+
+            H. 3D printing industry is extremely complicated.<br>
+            One can only observe a fraction of this vast and ever-changing market.<br>
+            It's just like the story of "Blind men and an elephant".<br>
+            However, through the process of discussion and voting, users can uncover the true face of this market and find out what it wants.<br>
+            <img src="imgs/foundryX/elephant.png" alt="the blinds and a elephant" width="350" height="200"><br>
+
+            I. Users will guide Foudry X through this repeated process to meet the market's need.<br>
+            And they can upgrade their own business and build up unique skill trees.<br>
+            <img src="imgs/foundryX/tree.png" alt="upgrade the skill tree" width="500" height="200"><br>
+
+            J. In return, Foundry X can not only get the funding it needs but also a group of users who always improves themselves.<br>
+            <img src="imgs/foundryX/fund.png" alt="fund" width="500" height="200"><br>
+        </h3>
+
+
+        <h1 id="map" style=" font-family: Times New Roman">Site map</h1>
+        <img src="imgs/foundryX/siteMap.png" alt="site map"><br>
+        <br>
+        
+        <!-- Not done yet
+        <h1 style=" font-family: Times New Roman">How to use Foundry X?</h1>
+        <h2>1.Begin your journey</h2>
+        <h3>A. Create your account<br>
+            B. Browse through the collection of script and find out which to subscribe.<br>
+            C. Add those scripts to your subscription list<br>
+            D. After paying fees, you can start using those script to create all kinds of printable models.</h3>
+
+        <h2>2.Post a pull request</h2>
+        <h3>A. Take notes when you find any idea that can improve the script you're using.<br>
+            B. Make a post in user forum. Describe your idea in detail.<br>
+            C. Accept feedback from the others and make your request better.<br>
+            D. Take advantage of your influence in the forum by inviting other memebers to vote for your request.<br>
+            E. If the request got the higest vote, it will enter developing phase.<br>
+            F. After testing, the new version of script will be released!
+        </h3>
+
+        <h2>3.Post a new project proposal</h2>
+        <h3>A. Draft: Describe the product in your mind as specific as possible with pictures and descriptions.<br>
+            If you understand JSCAD, you can write draft script for this product.<br>
+            B. Elected proposal: The develop team will evaluate new drafts in the forum on weekly basis.<br>
+            Those drafts with high feasibility will be approved and turned into proposals, which can enter the voting phase<br>
+            Drafts that are considered as not doable will be rejected<br>
+            C. Take advantage of your influence in the forum by inviting other memebers to vote for your proposal.<br>
+            D. If the proposal got the higest vote, it will enter developing phase.<br>
+            E. The new script project will be available when development is done.
+        </h3>
+
+        <h2>4.Manage your subscription</h2>
+        <h3>A. If you only need a script for a month, just set subscrioption to a month.<br>
+            B. If you always have to use a script, you can make an annual subscription!<br>
+            C. You no longer have to craw through complicated procee in traditional CAD software.<br>
+            Just go to your subcription list and make the thing you need!<br>
+        </h3>
+        -->
+        <h2>
+            <br>
+            <br>
+            Foundry X is still in early development<br>
+            If you are interested in this project or got some ideas about it, <br>
+            Please join our Facebook at:<br>
+        </h2>
+
+    </div>
+
+    <div id="ChtDiv" style="display: none" >
+        <h1 id="WhatisitCHT" style="font-family: Times New Roman">What is it?</h1>
+        <h3>Foundry X是一個線上服務網站</h3>
+        <h3>
+            它可以提供最佳的可列印檔案.<br>
+            它同時也是一個為新的3D列印專案提供開發與募資的平台<br>
+            <br>
+            <br>
+            <br>
+            <img src="imgs/foundryX/logo.png" alt="JSCAD logo" width="250" height="250"><br>
+            模型的生成是由名為OpenJSCAD的建模技術完成，這是一種腳本式的3D建模技術，<br>
+            與傳統的列印檔分享網站大不相同的是，你並非是從FTP伺服器下載列印檔的，所以不會三天兩頭碰上404找不到檔案之類的錯誤訊息。<br>
+            <br>
+            Foundry X運用一個獨特的機制來開發新的3D列印專案，<br>
+            它讓使用者社群來決定開發的方向，不是由開發團隊自行決定，<br>
+            因為Foundry X的使命是為你打造3D列印領域的最佳生財利器！
+        </h3>
+
+        <h1 id="WhyCHT" style=" font-family: Times New Roman">為什麼要訂閱這個服務？</h1>
+        <h3>
+            1.假設你正在關注一個3DP專案，它是一個模組化的無人機，而你固定會資助它的作者，<br>
+            但是突然之間這位作者忙於其他事務，而這個專案就此無疾而終...
+        </h3>
+
+        <h3>
+            Foundry X不會有這隱憂！你所訂閱的專案都會被定期維護。 <br>
+            它擁有一個固定的全職開發團隊，專責各個建模腳本的改良以及新腳本的開發<br>
+            就算原本的開發者離開了團隊，只要它仍然有人訂閱，這個專案仍然會繼續發展下去。<br><br>
+        </h3>
+
+        <h3>
+            2.當你訂閱一個建模專案腳本時，你得到的是無限個不同規格的同種類可列印檔案，不需要為了一個不同的規格再付一次錢！
+        </h3>
+
+        <h3>
+            受益於腳本式建模技術，Foundry X可以提供你一個強大的系統來產生可量身訂做的3D模型，<br>
+            只要調整模型的各項參數，如長度、寬度等，你就可以產生擁有不同尺寸或規格的同一類型物品，<br>
+            在這裡，你不需要掏腰包購買所謂的『第二版』或『第三版』。<br><br></h3>
+
+        <h3>3.你想要增進你工作室的收入，但是在開發客源方面心有餘而力不足...</h3>
+
+        <h3>
+            與其守株待兔等客人上門來要求你列印『他自己的檔案』，不如主動出擊，向整個市場宣告你有自己獨特的商品<br>
+            以3D列印音樂盒為例：<br>
+            當你訂閱這個專案之後，你就能夠創造擁有獨一無二造型與曲目的音樂盒<br>
+            你可以在自己的官方網站以及廣告文宣上具體的說：『我有辦法為你製造你夢寐以求的獨特音樂盒』，而不是和其他人數眾多的同業一起比拼價格。<br><br>
+        </h3>
+
+        <h3>4.分攤開發新商品的成本</h3>
+
+        <h3>對於小工作室來說，開發全新種類的商品是非常困難的，<br>
+            它耗資費時，而且就算你付出了這些成本也不能保證它能夠在市場中取得成功，<br>
+            然而在Foundry X的使用者論壇裡，你可以不須負擔所有的開發費用就能發起一個新的商品開發案，<br>
+            獨特的『眾籌表決式開發機制』將會把論壇中所有認同你提案的使用者們的資源匯聚起來，讓專案進入開發階段，<br>
+            這個機制同時能夠在專案的早期就把其中的問題與缺點抓出，讓最終的成品擁有更好的品質<br><br></h3>
+        <h1 id="HowCHT" style=" font-family: Times New Roman">How does it work?</h1>
+        <h2>1.腳本式3D建模: 一個腳本，無限種模型！<br></h2>
+        <h3>
+
+            <img src="imgs/foundryX/scriptBased.png" alt="script-based modeling" width="400" height="200"><br>
+            Foundry X的建模引擎為OpenJSCAD，和傳統的CAD程式不同，它是以網路瀏覽器作為運作平台，除了前述的無限模型組合之外，還有許多獨特的優點！<br>
+
+            A.操作極為容易，只要調整選單內的參數就可以生成你要的模型，不需要去背誦複雜的指令<br>
+            <img src="imgs/foundryX/simple.png" alt="simple" width="500" height="200"><br>
+            B.跨平台，免安裝，只要有瀏覽器就可以使用這個服務。<br>
+            <img src="imgs/foundryX/crossPlatform.png" alt="cross platform" width="500" height="200"><br>
+            C.不需要綁定電腦硬體序號，只要訂閱者登入網站、進入建模系統，就可以在任何一台裝置上產生列印檔<br>
+            <img src="imgs/foundryX/cloud.png" alt="cloud" width="200" height="200"><br>
+            D.Foundry X不是過去傳統的FTP列印檔下載網站! 模型在用戶端生成，不需要擔心網站的下載伺服器當機或忙碌<br>
+            <img src="imgs/foundryX/clientSide.png" alt="client side" width="500" height="200"><br><br>
+        </h3>
+
+        <h2>2.眾籌表決式開發： 藉由社群眾人的力量來推動Foundry X服務的進化<br></h2>
+        <h3>
+
+            <img src="imgs/foundryX/crowdfundedFull.png" alt="crowd-funded development" width="380" height="300"><br>
+            A.你覺得目前Foundry X提供的商品模型有改進的餘地？歡迎在論壇發起pull request！<br>
+            <img src="imgs/foundryX/pullReqest.png" alt="pull request" width="200" height="200"><br>
+
+            B.你腦海裡有一個超有趣，絕對會有人想要花錢購買的商品，但是沒有建模的技術？<br>
+            歡迎到論壇發起 Project proposal，將你的構想詳細的介紹給其他人！<br>
+            <img src="imgs/foundryX/proposal.png" alt="new project proposal" width="200" height="200"><br>
+            C.每一位Foundry X的付費用戶都會在付款時得到和金額成正比的點數：X points<br>
+            它可以在網站的論壇中使用，當你有認同或看好的Pull request和Project proposal時，就可以用它來提高它們的優先順位<br>
+            <img src="imgs/foundryX/xpoint.png" alt="x points" width="200" height="200"><br>
+
+            D.一個好的構想或是改進方案不一定一開始就能夠獲得眾人支持，而且內容也不是那麼周全，這個時候需要的是充分的討論與溝通，進而增進提案的可行性。<br>
+            <img src="imgs/foundryX/discussNUpgrade.png" alt="discuss and upgrade" width="500" height="200"><br>
+            E.Foundry X會在每一個月底採用順位最高的數個提案，在下一個月由官方進行開發和修正<br>
+            <img src="imgs/foundryX/select.png" alt="proposal selected" width="200" height="200"><br>
+            F.你發現有一個絕對能賺錢的提案，但是手上的點數已經花完了，怎麼辦？<br>
+            歡迎用現金購買X Points!<br>
+            <img src="imgs/foundryX/xpoint.png" alt="x points" width="200" height="200"><br>
+
+            G.Foundry X的目的是為客戶打造能夠賺錢的生財工具，自身也需要資金的挹注才能夠驅動新商品的開發和現有服務的維護，對於願意付出額外金額支援Foundry X開發團隊的客戶，我們樂意給予更多的表決權力，因為每一點被投注在各個提案的X point代表的是付費的客戶對Foundry X的投資以及他們對這個服務未來的期許<br>
+
+            H. 3D列印和建模是個非常複雜的產業，每一位用戶只觀察到了這個龐大且正在快速進化的市場的一角，如同瞎子摸象一般，但是藉由各個成員的討論與表決可以讓市場的真正面貌展露出來，找出最有開發價值的商品<br>
+            <img src="imgs/foundryX/elephant.png" alt="the blinds and a elephant" width="350" height="200"><br>
+            I.用戶將會在這個不斷重複的過程中引導Foundry X開發出最適合自身條件的商品種類，進而將自身的服務升級或是特化，點出自己獨特的『技能樹』。<br>
+            <img src="imgs/foundryX/tree.png" alt="upgrade the skill tree" width="500" height="200"><br>
+            J.Foundry X同時也獲得了成長所需要的資金，以及一個能夠不斷自我提昇的顧客群<br>
+            <img src="imgs/foundryX/fund.png" alt="fund" width="500" height="200"><br>
+        </h3>
+
+
+        <h2 id="mapCHT" style=" font-family: Times New Roman">Site map</h2>
+        <img src="imgs/foundryX/siteMap.png" alt="site map"><br>
+        
+        <!--Not done yet 
+        <h2 style=" font-family: Times New Roman">Foundry X的實際使用情境</h2>
+        <h3>1.開始使用</h3>
+        <h3>A. 建立帳號<br>
+            B. 瀏覽Foundry X的各種建模腳本，找出你要訂閱的商品<br>
+            C.付款後服務開通，開始生成各種模型！</h3>
+
+        <h3>2.提出pull request</h3>
+        <h3>A.在使用各種建模腳本時紀錄你任何的意見和可能的改進方案<br>
+            B.在論壇發文，需要固定格式和條件才能成為正式的pull request<br>
+            C.接受他人的反饋意見，改進你的方案<br>
+            D.發揮你的影響力，邀請論壇內其他成員為你的方案投下贊同<br>
+            E.方案通過後會進入開發階段<br>
+            F.測試完成的新功能正式上線！
+        </h3>
+
+        <h3>3.提出新開發案</h3>
+        <h3>A.草案階段：盡可能具體的將你腦海中那個充滿潛力的商品用文字和圖解敘述出來，如果你懂得JSCAD的話可以先把商品腳本的大略雛型寫出來，這會對草案的可行性大大加分<br>
+            B.正式提案階段：開發團隊每周會對論壇裡的新提案進行評估，把可行性較高的專案批准為正式提案，允許討論區的用戶對它進行投票贊助，被評估為技術上不可行的草案會被退回，讓提案者重新思考和修改草案<br>
+            C.發揮你的影響力，邀請論壇內其他成員為你的方案投下贊同<br>
+            D.方案通過後會進入開發階段<br>
+            E.測試完成的新功能正式上線！
+        </h3>
+
+        <h3>4.高度自由的訂閱制</h3>
+        <h3>A.只有這個月需要某一種的建模腳本：那就只要買一個月就好！<br>
+            B.預計整年度都要某一種的建模腳本：歡迎用優惠價訂閱12個月的服務！<br>
+            C.不再需要在複雜到極點的傳統CAD程式選單裡苦苦找尋你要的建模選項，只要到你訂閱的那一個腳本就能輕鬆把物件作出來！<br>
+        </h3>
+        -->
+        
+
+        <h2>
+            <br>
+            <br>
+            Foundry X目前仍處於雛形階段，<br>
+            需要專業人才加入開發團隊，<br>
+            特別是網站前端建構與3D建模腳本設計<br>
+            如果你對這個專案有興趣，又或者你有更棒的想法，歡迎加入Foundry X在Facebook上的討論群組:<br>
+        </h2>
+    </div>
+
+    <script>
+        ////Top button
+        var topButton = document.getElementById("goTopBtn");
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        //switch on and off the topButton by scroll
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+        //function to go back
+        function goTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        
+        ////Language switch
+        function langSwitch() {
+            function switcher(ele){
+                if(ele.style.display === "none"){
+                    ele.style.display = "block";
+                    console.log(ele.style.display);
+                }else{
+                    ele.style.display = "none";
+                    console.log(ele.style.display);
+                }
+            }
+            switcher(document.getElementById("EngToCht"));
+            switcher(document.getElementById("ChtToEng"));
+            switcher(document.getElementById("ChtDiv"));
+            switcher(document.getElementById("EngDiv"));
+            switcher(document.getElementById("navCHT"));
+            switcher(document.getElementById("navEng"));
+
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
