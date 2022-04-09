@@ -6,7 +6,7 @@
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="frontPage.css" type="text/css">
-    <title>The Foundry X project： Special Agricultural Operation</title>
+    <title>The Foundry X project: Special Agricultural Operation</title>
     <style>
         body {
             text-align: left;
@@ -126,11 +126,12 @@
 <body style="background-color : BurlyWood">
 
     <button onclick="goTop()" id="goTopBtn" title="Go to top">Go to top</button>
-
-
-    <h1 href="#news" style=" font-family: Times New Roman">Foundry X : Special agricultural Operation <br> 特別農耕行動</h1>
-
     
+
+    <h1 style=" font-family: Times New Roman">Foundry X : Special agricultural Operation 
+    <button onclick="langSwitch()" id="LangBtn" title="Go to top">Switch to English</button><br>
+     
+     特別農耕行動</h1>
     <div class="topnav" id="navCHT">
         <a class="active" href="index.html" style=" font-family: Times New Roman">回首頁</a>
 
@@ -140,24 +141,76 @@
         <a href="#Key" style=" font-family: Times New Roman">關鍵技術</a>
         <a href="#JobAssign" style=" font-family: Times New Roman">工作指派</a>
         <a href="#OpsType" style=" font-family: Times New Roman">行動分類</a>
-        
-        
-        
+   
+    </div>
+     <div class="topnav" id="navEng" style = "display:none">
+        <a class="active" href="index.html" style=" font-family: Times New Roman">Back to Index</a>
+
+        <a href="#Whatisit" style=" font-family: Times New Roman">What is it?</a>
+        <a href="#Benefit" style=" font-family: Times New Roman">What is its benefit?</a>
+        <a href="#Goals" style=" font-family: Times New Roman">Major Objectives</a>
+        <a href="#Key" style=" font-family: Times New Roman">Key Technologies</a>
+        <a href="#JobAssign" style=" font-family: Times New Roman">Job Assignment</a>
+        <a href="#OpsType" style=" font-family: Times New Roman">Operation Catagories</a>
+   
     </div>
 
+    <div id="EngDiv" style="display: none">
+        <h1 id="WhatisitENG" style="font-family: Times New Roman">What is it?</h1>
+        <h2>
+        It's an opration that utilizes agricultural technogies to reduce europe's energy dependency on Russian oil and gas. <br>
+        The Europe depends on natural gas from Russia to heat their homes and make chemical fertilizer.<br>
+Its key technology is compost heat recovery(CHR), which has been researched for many years and have various types in different scales.* ref 1<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xh_731DFSY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 
+The mechanism of CHR is quite simple: To harvest heat generated from aerobic fermentation of a enclosed compost pile.<br>
+One can easily start an aerobic compost pile with a broad spectrum of raw materials.<br>
+If the compost is enclosed in a bin or tumbler barrel, the weather and tempratures outside can hardly influence the fermentation process.<br>
+Therefore, this technology is neither limited by raw material nor environment and it can be performed throughtout all Europe.<br>
+
+This operation will be conducted mainly by volunteers although cooperations with governments is also possible.<br>
+The S.A.O. team will crate a website to share knowleges and teach local practiioners to build up CHR systems which are suitable for their needs.<br>
+The team will also build up a platform for practitioners to buy and sell compost / crops with eachother to makersure that everything produced will not be wasted.<br><br>
+
+The S.A.O will take following steps：<br>
+1.Develop and build serveral test CHR systems to find the best designs.<br>
+2.S.A.O Development team will establish a web platfrom.<br>
+This site will provide local participants with blueprints and informations to build suitable CHR systems.<br>
+This site also has a platform for users to echange the compost and crop they created.<br>
+3.Recruit participants around the world.<br>
+4.Publish results/statistics periodicaly and keep improving CHR systems.<br>
+<a href="SystemDraft.html" style=" font-family: Times New Roman">Draft of a CHR reactor</a><br>
+
+        </h2><br>
+        
+        <h1 id="WhatisitENG" style="font-family: Times New Roman">What is its benefit?</h1>
+        <h2>
+         1.Most people who supports Ukraine can't directly fight in Ukraine terrain.<br>
+         This non-military operation which can be performed at one's backyard will both help Ukraine and put pressure on Russia<br>
+2.S.A.O is a non-governmental organization which is not limited by bureaucracy.<br>
+3.The oprations will be led by local practitioners to be more agile.<br>
+4.Help refugees develop self-reliance by growing their own food and make their own heat.<br>
+This will sustain thier status in local communities.<br>
+5.By stablizing food prices and lowering energy demand, the Ukraine and its ally will have more room in negotiation<br>
+6.Create new jobs that never existed before<br>
+7.If the Europe, which is among the top buyers of Russian energy, can cut off this reliance, new oligoarchs will be difficult to rise.<br>
+
+        </h2>
+    </div>
+    
     
     <div id="ChtDiv" >
         <h1 id="WhatisitCHT" style="font-family: Times New Roman">它是什麼?</h1>
         <h2>
-        在歐洲大多數的室內加熱系統使用天然氣作為燃料，而大多數的天然氣就來自俄羅斯<br>
+        在歐洲大多數的室內加熱系統使用天然氣作為燃料，而大多數的天然氣就來自俄羅斯，<br>
+        另外化學肥料的氮肥也是使用天然氣以哈伯法製成的，<br>
         這個行動運用農業科技來大幅度降低歐洲全區域對俄羅斯石油與天然氣，同時運用大量的閒置人力和空間來彌補中短期的糧食生產缺口。<br>
 它最關鍵的科技是堆肥熱能回收系統（CHR），藉由建立堆肥反應以產生熱能，並使用產出的堆肥進行糧食耕作。<br>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xh_731DFSY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
 這個科技在過去的數十年已經被許多人研究並且發展出各種類型與規模。* ref 1<br><br>
 
 
-CHT的原理非常簡單：從好氧堆肥/熱堆肥的反應堆獲取熱能。<br>
+CHR的原理非常簡單：從好氧堆肥/熱堆肥的反應堆獲取熱能。<br>
 任何人都可以輕易的製作好氧堆肥，而且可用的堆肥材料分佈廣泛又容易取得。<br>
 如果將堆肥反應堆收納在一個箱子或筒子的話，外界的天氣與溫度就極難對發酵反應造成影響。<br>
 因此，這個科技在原料和環境方面都受限不大，可以在歐洲全境實行。<br>
@@ -171,7 +224,8 @@ S.A.O的行動展開流程如下：<br><br>
 3.向世界各地招募參與者<br>
 4.定期進行成果發布以及系統改良<br>
         
-        <a href="SystemDraft.html" style=" font-family: Times New Roman">堆肥反應器草圖</a><br>
+        <a href="doc/BoxFacility.pdf" style=" font-family: Times New Roman"> 生物質再生中心草案 </a><br>
+
         </h2><br>
         <h1 id="Benefit" style="font-family: Times New Roman">S.A.O能帶來什麼好處？</h1>
         <h2>
@@ -387,8 +441,7 @@ Anim Sci J. 2022 Jan;93(1):e13703<br>
                     console.log(ele.style.display);
                 }
             }
-            switcher(document.getElementById("EngToCht"));
-            switcher(document.getElementById("ChtToEng"));
+
             switcher(document.getElementById("ChtDiv"));
             switcher(document.getElementById("EngDiv"));
             switcher(document.getElementById("navCHT"));
